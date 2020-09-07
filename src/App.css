@@ -14,11 +14,26 @@
   border: 1px solid pink;
 }
 
+.hide {
+  display: none;
+}
+
 .menu {
   border: 1px solid red;
 }
 
-.choice {
+.choice-container {
+  border: 1px solid purple;
+  cursor: pointer;
+  flex: 1;
+}
+
+.subchoices {
+  border: 1px solid green;
+  position: absolute;
+}
+
+.subchoice {
   flex: 1;
 }
 
