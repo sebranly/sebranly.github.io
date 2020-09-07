@@ -8,6 +8,11 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Pagination from "react-bootstrap/Pagination";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Badge from "react-bootstrap/Badge";
 
 const App = () => {
   const [visible, setVisible] = React.useState(false);
@@ -49,6 +54,19 @@ const App = () => {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <ButtonGroup>
+              <Button>1</Button>
+              <Button>2</Button>
+
+              <DropdownButton
+                as={ButtonGroup}
+                title="Dropdown"
+                id="bg-nested-dropdown"
+              >
+                <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
+                <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
+              </DropdownButton>
+            </ButtonGroup>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -79,7 +97,9 @@ const App = () => {
         <div className="body">
           <div className="block-2">
             <div className="article">
-              <h3>Something</h3>
+              <h3>
+                Something <Badge variant="secondary">New</Badge>
+              </h3>
               <p>One paragraph</p>
               <p>Another one</p>
               <p>
@@ -119,6 +139,23 @@ const App = () => {
             </div>
           </div>
         </div>
+        <Pagination className="pagination">
+          <Pagination.First />
+          <Pagination.Prev />
+          <Pagination.Item>{1}</Pagination.Item>
+          <Pagination.Ellipsis />
+
+          <Pagination.Item>{10}</Pagination.Item>
+          <Pagination.Item>{11}</Pagination.Item>
+          <Pagination.Item active>{12}</Pagination.Item>
+          <Pagination.Item>{13}</Pagination.Item>
+          <Pagination.Item disabled>{14}</Pagination.Item>
+
+          <Pagination.Ellipsis />
+          <Pagination.Item>{20}</Pagination.Item>
+          <Pagination.Next />
+          <Pagination.Last />
+        </Pagination>
         <div className="footer">Created in 2020</div>
       </div>
     </HelmetProvider>

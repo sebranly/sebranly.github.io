@@ -70,3 +70,7 @@
   margin: 5px;
   text-align: left;
 }
+
+.pagination {
+  justify-content: center;
+}
