@@ -1,7 +1,13 @@
 import * as React from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import classnames from "classnames";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 const App = () => {
   const [visible, setVisible] = React.useState(false);
@@ -24,6 +30,12 @@ const App = () => {
 
   return (
     <HelmetProvider>
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        data-cross-origin="anonymous"
+      />
       <Helmet>
         <title>Sebastien</title>
         <link rel="canonical" href="https://sebranly.github.io/" />
@@ -31,6 +43,18 @@ const App = () => {
       <div className="main">
         <h1>Sebastien</h1>
         <h2>Programming</h2>
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="mr-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+          <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <Button variant="outline-info">Search</Button>
+          </Form>
+        </Navbar>
         <div className="menu">
           <ul className="choices">
             <li
