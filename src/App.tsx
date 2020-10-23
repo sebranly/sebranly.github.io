@@ -16,6 +16,11 @@ const App = () => {
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
 
+  window.onhashchange = function () {
+    const hash = window?.location?.hash?.substr(1);
+    setPage(hash);
+  };
+
   const renderBody = () => {
     if (page === "about-author") {
       return (
@@ -52,16 +57,21 @@ const App = () => {
             <div>
               There are 26 letters in the English alphabet. These letters are
               divided into two categories:{" "}
-              <div className="clickable-page" onClick={() => setPage("vowels")}>
-                vowels
-              </div>{" "}
-              and{" "}
-              <div
+              <a
                 className="clickable-page"
+                href="#vowels"
+                onClick={() => setPage("vowels")}
+              >
+                vowels
+              </a>{" "}
+              and{" "}
+              <a
+                className="clickable-page"
+                href="#consonants"
                 onClick={() => setPage("consonants")}
               >
                 consonants
-              </div>
+              </a>
               .
             </div>
           </div>
@@ -116,7 +126,7 @@ const App = () => {
     );
 
     return (
-      <div className="body">
+      <>
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">
@@ -148,7 +158,7 @@ const App = () => {
             <p>Very short description</p>
           </div>
         </div>
-      </div>
+      </>
     );
   };
 

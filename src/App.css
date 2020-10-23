@@ -119,6 +119,11 @@
     U+FEFF, U+FFFD;
 }
 
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
+
 .main {
   text-align: center;
   margin-left: 50px;
@@ -163,11 +168,11 @@
 .clickable-page {
   display: inline;
   font-weight: bold;
+  color: black;
 }
 
 .clickable-page:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  color: black;
 }
 
 .footer {
@@ -200,8 +205,6 @@
 }
 
 .article {
-  padding: 5px;
-  margin: 5px;
   text-align: left;
 }
 
