@@ -167,6 +167,7 @@ html {
   margin-top: 30px;
   font-family: "Playfair Display";
   color: black;
+  background-color: none;
 }
 
 .clickable-page {

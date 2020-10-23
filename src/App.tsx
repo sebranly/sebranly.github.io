@@ -274,7 +274,7 @@ const App = () => {
       <div className="main">
         <h1 className="h1-title">Faith Pellas</h1>
         <h2 className="h2-title">Pronunciation</h2>
-        <Navbar className="navbar" bg="light" expand="lg">
+        <Navbar className="navbar" expand="lg">
           <Dropdown
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
