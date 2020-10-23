@@ -11,6 +11,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import { quiz } from "./quiz";
 import Quiz from "react-quiz-component";
+import { GiMagnifyingGlass } from "react-icons/gi";
 
 const App = () => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -273,7 +274,7 @@ const App = () => {
       <div className="main">
         <h1 className="h1-title">Faith Pellas</h1>
         <h2 className="h2-title">Pronunciation</h2>
-        <Navbar className="navbar" bg="dark" variant="dark">
+        <Navbar className="navbar" bg="light" expand="lg">
           <Dropdown
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -317,8 +318,8 @@ const App = () => {
             </Nav.Link>
           </Nav>
           <Form inline>
+            <GiMagnifyingGlass className="mag" />
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-info">Search</Button>
           </Form>
         </Navbar>
 

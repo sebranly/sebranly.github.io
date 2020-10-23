@@ -119,6 +119,10 @@
     U+FEFF, U+FFFD;
 }
 
+.mag {
+  margin-right: 10px;
+}
+
 html {
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
@@ -193,7 +197,10 @@ html {
 }
 
 .body {
+  background-color: #f0f0f0;
+  padding: 20px;
   margin-top: 20px;
+  border-radius: 10px;
   display: flex;
 }
 
