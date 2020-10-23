@@ -13,6 +13,9 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Badge from "react-bootstrap/Badge";
 
 const App = () => {
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(false);
+
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
 
@@ -108,6 +111,17 @@ const App = () => {
       );
     }
 
+    if (page === "quizz") {
+      return (
+        <div className="block-2">
+          <div className="article">
+            <h3 className="h3-title">Quizz</h3>
+            <p>TBD</p>
+          </div>
+        </div>
+      );
+    }
+
     const renderFake = () => (
       <div className="article">
         <h3 className="h3-title">Something else</h3>
@@ -178,7 +192,12 @@ const App = () => {
         <h1 className="h1-title">Faith Pellas</h1>
         <h2 className="h2-title">Pronunciation</h2>
         <Navbar className="navbar" bg="dark" variant="dark">
-          <Dropdown>
+          <Dropdown
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onToggle={() => setIsClicked(!isClicked)}
+            show={isClicked || isHovered}
+          >
             <Dropdown.Toggle variant="secondary" id="dropdown-basic">
               About
             </Dropdown.Toggle>
@@ -210,6 +229,9 @@ const App = () => {
             </Nav.Link>
             <Nav.Link href="#resources" onClick={() => setPage("resources")}>
               Resources
+            </Nav.Link>
+            <Nav.Link href="#quizz" onClick={() => setPage("quizz")}>
+              Quizz
             </Nav.Link>
           </Nav>
           <Form inline>
