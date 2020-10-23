@@ -106,6 +106,42 @@ const App = () => {
           <div className="article">
             <h3 className="h3-title">Consonants</h3>
             <p>TBD</p>
+            <figure className="left">
+              <figcaption>Listen to the T-Rex:</figcaption>
+              <audio
+                controls
+                src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+              >
+                Your browser does not support the
+                <code>audio</code> element.
+              </audio>
+            </figure>
+            <figure className="left">
+              <figcaption>Flower example (hosted video):</figcaption>
+              <video controls width="500">
+                <source
+                  src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+                  type="video/webm"
+                />
+                <source
+                  src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                  type="video/mp4"
+                />
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+            </figure>
+            <figure className="left">
+              <figcaption>Another example (from YouTube):</figcaption>
+              <iframe
+                title="video-youtube"
+                width="500"
+                height="315"
+                src="https://www.youtube.com/embed/FzA26s8k3nQ"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </figure>
           </div>
         </div>
       );

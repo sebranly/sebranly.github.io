@@ -214,6 +214,10 @@ html {
   text-align: left;
 }
 
+.left {
+  text-align: left;
+}
+
 .pagination {
   justify-content: center;
 }
