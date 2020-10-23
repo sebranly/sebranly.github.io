@@ -183,6 +183,11 @@ html {
   right: 0;
 }
 
+.form {
+  width: 500px;
+  text-align: left;
+}
+
 .hide {
   display: none;
 }
@@ -190,6 +195,10 @@ html {
 .body {
   margin-top: 20px;
   display: flex;
+}
+
+.anti-flex {
+  display: block;
 }
 
 .block-1 {

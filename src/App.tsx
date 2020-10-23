@@ -7,9 +7,7 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import Badge from "react-bootstrap/Badge";
 import { quiz } from "./quiz";
 import Quiz from "react-quiz-component";
@@ -17,6 +15,8 @@ import Quiz from "react-quiz-component";
 const App = () => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [isClicked, setIsClicked] = React.useState(false);
+  const [emailBody, setEmailBody] = React.useState("");
+  const [emailSubject, setEmailSubject] = React.useState("");
 
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
@@ -29,16 +29,60 @@ const App = () => {
   const renderBody = () => {
     if (page === "about-author") {
       return (
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">About the Author</h3>
-            <p>
-              Faith Pellas is a graduate student of Teaching English to Speakers
-              of Other Languages (TESOL) at the University of San Francisco.
-              This project was born out of the necessity to provide ESL and EFL
-              teachers a guide on teaching pronunciation.
-            </p>
+        <div className="anti-flex">
+          <div className="block-2">
+            <div className="article">
+              <h3 className="h3-title">About the Author</h3>
+              <p>
+                Faith Pellas is a graduate student of Teaching English to
+                Speakers of Other Languages (TESOL) at the University of San
+                Francisco. This project was born out of the necessity to provide
+                ESL and EFL teachers a guide on teaching pronunciation.
+              </p>
+            </div>
           </div>
+          <hr />
+          <Form className="form">
+            <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Label>Email form</Form.Label>
+              <Form.Text className="text-muted">
+                Or send me a message directly at test@example.com
+              </Form.Text>
+              <br />
+              <Form.Label>Subject</Form.Label>
+              <Form.Control
+                onChange={(e) => {
+                  setEmailSubject(e.target.value);
+                }}
+                type="text"
+                placeholder="Subject"
+              />
+              <br />
+              <Form.Label>Body</Form.Label>
+              <Form.Control
+                onChange={(e) => {
+                  setEmailBody(e.target.value);
+                }}
+                as="textarea"
+                rows={10}
+                placeholder="Your message"
+              />
+            </Form.Group>
+            <br />
+            <Button
+              onClick={() => {
+                window.open(
+                  `mailto:test@example.com?subject=${encodeURIComponent(
+                    emailSubject
+                  )}&body=${encodeURIComponent(emailBody)}`
+                );
+              }}
+              variant="primary"
+              type="submit"
+            >
+              Submit
+            </Button>
+          </Form>
         </div>
       );
     }
