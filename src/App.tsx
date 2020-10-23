@@ -11,6 +11,8 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Badge from "react-bootstrap/Badge";
+import { quiz } from "./quiz";
+import Quiz from "react-quiz-component";
 
 const App = () => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -147,12 +149,12 @@ const App = () => {
       );
     }
 
-    if (page === "quizz") {
+    if (page === "quiz") {
       return (
         <div className="block-2">
           <div className="article">
-            <h3 className="h3-title">Quizz</h3>
-            <p>TBD</p>
+            <h3 className="h3-title">Quiz</h3>
+            <Quiz quiz={quiz} />
           </div>
         </div>
       );
@@ -266,8 +268,8 @@ const App = () => {
             <Nav.Link href="#resources" onClick={() => setPage("resources")}>
               Resources
             </Nav.Link>
-            <Nav.Link href="#quizz" onClick={() => setPage("quizz")}>
-              Quizz
+            <Nav.Link href="#quiz" onClick={() => setPage("quiz")}>
+              Quiz
             </Nav.Link>
           </Nav>
           <Form inline>
