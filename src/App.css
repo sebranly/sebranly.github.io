@@ -138,6 +138,10 @@ html {
   font-size: 20px;
 }
 
+#dropdown-phonemes {
+  margin-left: 5px;
+}
+
 .h1-title {
   font-size: 25px;
   color: gray;
@@ -145,7 +149,7 @@ html {
 }
 
 .h2-title {
-  font-size: 35px;
+  font-size: 45px;
   color: black;
   font-weight: bold;
 }
@@ -154,6 +158,11 @@ html {
   font-weight: bold;
   font-family: "Playfair Display";
   color: black;
+}
+
+.vowels-title {
+  font-weight: bold;
+  text-align: left;
 }
 
 .nav-link {
@@ -202,7 +211,6 @@ html {
   padding: 20px;
   margin-top: 20px;
   border-radius: 10px;
-  display: flex;
 }
 
 .anti-flex {

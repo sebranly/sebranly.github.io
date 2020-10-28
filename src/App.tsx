@@ -14,8 +14,10 @@ import Quiz from "react-quiz-component";
 import { GiMagnifyingGlass } from "react-icons/gi";
 
 const App = () => {
-  const [isHovered, setIsHovered] = React.useState(false);
-  const [isClicked, setIsClicked] = React.useState(false);
+  const [isAuthorClicked, setIsAuthorClicked] = React.useState(false);
+  const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
+  const [isPhonemesClicked, setIsPhonemesClicked] = React.useState(false);
+  const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
   const [emailBody, setEmailBody] = React.useState("");
   const [emailSubject, setEmailSubject] = React.useState("");
 
@@ -27,6 +29,50 @@ const App = () => {
     setPage(hash);
   };
 
+  const renderLongVowels = () => {
+    return (
+      <div className="block-2">
+        <div className="article">
+          <h3 className="h3-title">6 Long Vowels /ɑ:, i:, u:, ju: , ɜ:, ɔ:/</h3>
+          <p>TBD</p>
+        </div>
+      </div>
+    );
+  };
+
+  const renderShortVowels = () => {
+    return (
+      <div className="block-2">
+        <div className="article">
+          <h3 className="h3-title">6 Short Vowels /æ, ɛ, ɪ, ɑ, ʌ, ʊ/</h3>
+          <p>TBD</p>
+        </div>
+      </div>
+    );
+  };
+
+  const renderRColoredVowels = () => {
+    return (
+      <div className="block-2">
+        <div className="article">
+          <h3 className="h3-title">R-Colored Vowels</h3>
+          <p>TBD</p>
+        </div>
+      </div>
+    );
+  };
+
+  const renderDiphthongs = () => {
+    return (
+      <div className="block-2">
+        <div className="article">
+          <h3 className="h3-title">5 NAE Diphthongs /aɪ, aʊ, eɪ, oʊ, ɔɪ/</h3>
+          <p>TBD</p>
+        </div>
+      </div>
+    );
+  };
+
   const renderBody = () => {
     if (page === "about-author") {
       return (
@@ -35,8 +81,7 @@ const App = () => {
             <div className="article">
               <h3 className="h3-title">About the Author</h3>
               <p>
-                Faith Pellas is a graduate student of Teaching English to
-                Speakers of Other Languages (TESOL) at the University of San
+                Faith Pellas is an MA TESOL student at the University of San
                 Francisco. This project was born out of the necessity to provide
                 ESL and EFL teachers a guide on teaching pronunciation.
               </p>
@@ -125,15 +170,87 @@ const App = () => {
               .
             </div>
           </div>
+          <br />
+          <figure className="left">
+            <figcaption>
+              Sounds of English Vowels and Consonants with phonetic symbols
+            </figcaption>
+            <iframe
+              title="video-youtube"
+              width="500"
+              height="315"
+              src="https://www.youtube.com/embed/JwTDPu2TE6k"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </figure>
+          <figure className="left">
+            <figcaption>
+              ALL OF THE SOUNDS OF ENGLISH | American English Sounds and IPA
+              Symbols | Learn English Pronunciation
+            </figcaption>
+            <iframe
+              title="video-youtube"
+              width="500"
+              height="315"
+              src="https://www.youtube.com/embed/yIOOOC0zlmY"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </figure>
+          <figure className="left">
+            <figcaption>
+              IELTS Speaking: Pronunciation | THE 44 SOUNDS OF ENGLISH with Jay!
+            </figcaption>
+            <iframe
+              title="video-youtube"
+              width="500"
+              height="315"
+              src="https://www.youtube.com/embed/MXBsy6sKP3Y"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </figure>
         </div>
       );
     }
 
+    if (page === "short-vowels") {
+      return renderShortVowels();
+    }
+
+    if (page === "long-vowels") {
+      return renderLongVowels();
+    }
+
+    if (page === "r-colored-vowels") {
+      return renderRColoredVowels();
+    }
+
+    if (page === "diphthongs") {
+      return renderDiphthongs();
+    }
+
     if (page === "vowels") {
+      return (
+        <>
+          <h2 className="h3-title vowels-title">Vowels: unblocked sounds</h2>
+          <br />
+          {renderShortVowels()}
+          {renderLongVowels()}
+          {renderRColoredVowels()}
+        </>
+      );
+    }
+
+    if (page === "consonants") {
       return (
         <div className="block-2">
           <div className="article">
-            <h3 className="h3-title">Vowels</h3>
+            <h3 className="h3-title">Consonants: blocked sounds</h3>
             <ul>
               <li>Vowels: A, E, I, O, U</li>
               <li>19 Vowel Sounds</li>
@@ -147,7 +264,7 @@ const App = () => {
       );
     }
 
-    if (page === "consonants") {
+    if (page === "consonants-copy") {
       return (
         <div className="block-2">
           <div className="article">
@@ -176,18 +293,6 @@ const App = () => {
                 />
                 Sorry, your browser doesn't support embedded videos.
               </video>
-            </figure>
-            <figure className="left">
-              <figcaption>Another example (from YouTube):</figcaption>
-              <iframe
-                title="video-youtube"
-                width="500"
-                height="315"
-                src="https://www.youtube.com/embed/FzA26s8k3nQ"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
             </figure>
           </div>
         </div>
@@ -276,12 +381,28 @@ const App = () => {
         <h2 className="h2-title">Pronunciation</h2>
         <Navbar className="navbar" expand="lg">
           <Dropdown
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onToggle={() => setIsClicked(!isClicked)}
-            show={isClicked || isHovered}
+            onMouseEnter={() => {
+              setIsAuthorHovered(true);
+              setIsPhonemesClicked(false);
+              setIsPhonemesHovered(false);
+            }}
+            onMouseLeave={() => {
+              setIsAuthorHovered(false);
+              setIsPhonemesClicked(false);
+              setIsPhonemesHovered(false);
+            }}
+            onToggle={() => {
+              setIsAuthorClicked(!isAuthorClicked);
+              setIsPhonemesClicked(false);
+              setIsPhonemesHovered(false);
+            }}
+            show={isAuthorClicked || isAuthorHovered}
           >
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            <Dropdown.Toggle
+              href="#about-author"
+              variant="secondary"
+              id="dropdown-about"
+            >
               About
             </Dropdown.Toggle>
 
@@ -300,10 +421,67 @@ const App = () => {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Nav className="mr-auto">
-            <Nav.Link href="#phonemes" onClick={() => setPage("phonemes")}>
+          <Dropdown
+            onMouseEnter={() => {
+              setIsPhonemesHovered(true);
+              setIsAuthorClicked(false);
+              setIsAuthorHovered(false);
+            }}
+            onMouseLeave={() => {
+              setIsPhonemesHovered(false);
+              setIsAuthorClicked(false);
+              setIsAuthorHovered(false);
+            }}
+            onToggle={() => {
+              setIsPhonemesClicked(!isPhonemesClicked);
+              setIsAuthorClicked(false);
+              setIsAuthorHovered(false);
+            }}
+            show={isPhonemesClicked || isPhonemesHovered}
+          >
+            <Dropdown.Toggle
+              href="#phonemes"
+              onClick={() => setPage("phonemes")}
+              variant="secondary"
+              id="dropdown-phonemes"
+            >
               Phonemes
-            </Nav.Link>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item
+                href="#short-vowels"
+                onClick={() => setPage("short-vowels")}
+              >
+                Short vowels
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#long-vowels"
+                onClick={() => setPage("long-vowels")}
+              >
+                Long vowels
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#r-colored-vowels"
+                onClick={() => setPage("r-colored-vowels")}
+              >
+                R-colored vowels
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#diphthongs"
+                onClick={() => setPage("diphthongs")}
+              >
+                Diphthongs
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#consonants"
+                onClick={() => setPage("consonants")}
+              >
+                Consonants
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Nav className="mr-auto">
             <Nav.Link href="#stress" onClick={() => setPage("stress")}>
               Stress
             </Nav.Link>
