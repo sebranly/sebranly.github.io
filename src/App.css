@@ -160,10 +160,12 @@ tr:nth-child(even) {
 .dropdown-toggle {
   background-color: transparent !important;
   color: rgba(0, 0, 0, 0.5) !important;
-  border-left: unset;
   font-size: 32px !important;
   border: unset !important;
-  border-right: unset;
+}
+
+.dropdown-toggle::after {
+  border: unset !important;
 }
 
 #dropdown-phonemes {
