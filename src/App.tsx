@@ -12,7 +12,12 @@ import Badge from "react-bootstrap/Badge";
 import { quiz } from "./quiz";
 import Quiz from "react-quiz-component";
 import { GiMagnifyingGlass } from "react-icons/gi";
-import { shortVowels } from "./phonemes";
+import {
+  rColoredVowels,
+  longVowels,
+  shortVowels,
+  diphthongs,
+} from "./phonemes";
 
 const App = () => {
   const [isAuthorClicked, setIsAuthorClicked] = React.useState(false);
@@ -30,19 +35,19 @@ const App = () => {
     setPage(hash);
   };
 
-  const renderTable = (data: any) => {
+  const renderTable = (data: any, renderGrapheme = true) => {
     return (
       <table>
         <tr>
           <th>Phoneme</th>
-          <th>Grapheme</th>
+          {renderGrapheme && <th>Grapheme</th>}
           <th>Examples</th>
         </tr>
         {data.map((line: any) => {
           return (
             <tr>
               <td>{line[0]}</td>
-              <td>{line[1]}</td>
+              {renderGrapheme && <td>{line[1]}</td>}
               <td dangerouslySetInnerHTML={{ __html: line[2] }} />
             </tr>
           );
@@ -56,7 +61,7 @@ const App = () => {
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">6 Long Vowels /ɑ:, i:, u:, ju: , ɜ:, ɔ:/</h3>
-          <p>TBD</p>
+          {renderTable(longVowels)}
         </div>
       </div>
     );
@@ -78,7 +83,7 @@ const App = () => {
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">R-Colored Vowels</h3>
-          <p>TBD</p>
+          {renderTable(rColoredVowels, false)}
         </div>
       </div>
     );
@@ -89,7 +94,8 @@ const App = () => {
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">5 NAE Diphthongs /aɪ, aʊ, eɪ, oʊ, ɔɪ/</h3>
-          <p>TBD</p>
+          <h4>(8 in BrE)</h4>
+          {renderTable(diphthongs, false)}
         </div>
       </div>
     );
