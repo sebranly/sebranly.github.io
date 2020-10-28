@@ -130,12 +130,12 @@ html {
 
 .main {
   text-align: center;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 100px;
+  margin-right: 100px;
   margin-bottom: 30px;
   margin-top: 30px;
   font-family: "Merryweather";
-  font-size: 20px;
+  font-size: 30px;
 }
 
 table {
@@ -157,18 +157,27 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+.dropdown-toggle {
+  background-color: transparent !important;
+  color: rgba(0, 0, 0, 0.5) !important;
+  border-left: unset;
+  font-size: 32px !important;
+  border: unset !important;
+  border-right: unset;
+}
+
 #dropdown-phonemes {
   margin-left: 5px;
 }
 
 .h1-title {
-  font-size: 25px;
+  font-size: 37px;
   color: gray;
   font-family: "Economica";
 }
 
 .h2-title {
-  font-size: 45px;
+  font-size: 57px;
   color: black;
   font-weight: bold;
 }
@@ -187,7 +196,7 @@ tr:nth-child(even) {
 .nav-link {
   margin-left: 5px;
   margin-right: 5px;
-  font-size: 21px;
+  font-size: 32px;
 }
 
 .navbar {
