@@ -12,6 +12,7 @@ import Badge from "react-bootstrap/Badge";
 import { quiz } from "./quiz";
 import Quiz from "react-quiz-component";
 import { GiMagnifyingGlass } from "react-icons/gi";
+import { shortVowels } from "./phonemes";
 
 const App = () => {
   const [isAuthorClicked, setIsAuthorClicked] = React.useState(false);
@@ -27,6 +28,27 @@ const App = () => {
   window.onhashchange = function () {
     const hash = window?.location?.hash?.substr(1);
     setPage(hash);
+  };
+
+  const renderTable = (data: any) => {
+    return (
+      <table>
+        <tr>
+          <th>Phoneme</th>
+          <th>Grapheme</th>
+          <th>Examples</th>
+        </tr>
+        {data.map((line: any) => {
+          return (
+            <tr>
+              <td>{line[0]}</td>
+              <td>{line[1]}</td>
+              <td dangerouslySetInnerHTML={{ __html: line[2] }} />
+            </tr>
+          );
+        })}
+      </table>
+    );
   };
 
   const renderLongVowels = () => {
@@ -45,7 +67,7 @@ const App = () => {
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">6 Short Vowels /æ, ɛ, ɪ, ɑ, ʌ, ʊ/</h3>
-          <p>TBD</p>
+          {renderTable(shortVowels)}
         </div>
       </div>
     );
