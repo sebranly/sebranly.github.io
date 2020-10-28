@@ -198,50 +198,6 @@ const App = () => {
               .
             </div>
           </div>
-          <br />
-          <figure className="left">
-            <figcaption>
-              Sounds of English Vowels and Consonants with phonetic symbols
-            </figcaption>
-            <iframe
-              title="video-youtube"
-              width="500"
-              height="315"
-              src="https://www.youtube.com/embed/JwTDPu2TE6k"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </figure>
-          <figure className="left">
-            <figcaption>
-              ALL OF THE SOUNDS OF ENGLISH | American English Sounds and IPA
-              Symbols | Learn English Pronunciation
-            </figcaption>
-            <iframe
-              title="video-youtube"
-              width="500"
-              height="315"
-              src="https://www.youtube.com/embed/yIOOOC0zlmY"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </figure>
-          <figure className="left">
-            <figcaption>
-              IELTS Speaking: Pronunciation | THE 44 SOUNDS OF ENGLISH with Jay!
-            </figcaption>
-            <iframe
-              title="video-youtube"
-              width="500"
-              height="315"
-              src="https://www.youtube.com/embed/MXBsy6sKP3Y"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </figure>
         </div>
       );
     }
