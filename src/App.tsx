@@ -325,20 +325,12 @@ const App = () => {
           <Dropdown
             onMouseEnter={() => {
               setIsAuthorHovered(true);
-              setIsPhonemesClicked(false);
               setIsPhonemesHovered(false);
             }}
             onMouseLeave={() => {
               setIsAuthorHovered(false);
-              setIsPhonemesClicked(false);
-              setIsPhonemesHovered(false);
             }}
-            onToggle={() => {
-              setIsAuthorClicked(!isAuthorClicked);
-              setIsPhonemesClicked(false);
-              setIsPhonemesHovered(false);
-            }}
-            show={isAuthorClicked || isAuthorHovered}
+            show={isAuthorHovered}
           >
             <Dropdown.Toggle
               href="#about-author"
@@ -351,12 +343,18 @@ const App = () => {
             <Dropdown.Menu>
               <Dropdown.Item
                 href="#about-author"
-                onClick={() => setPage("about-author")}
+                onClick={() => {
+                  setPage("about-author");
+                  setIsAuthorHovered(false);
+                }}
               >
                 About the Author
               </Dropdown.Item>
               <Dropdown.Item
-                onClick={() => setPage("letter-teachers")}
+                onClick={() => {
+                  setPage("letter-teachers");
+                  setIsAuthorHovered(false);
+                }}
                 href="#letter-teachers"
               >
                 Letter to Teachers
@@ -366,24 +364,19 @@ const App = () => {
           <Dropdown
             onMouseEnter={() => {
               setIsPhonemesHovered(true);
-              setIsAuthorClicked(false);
               setIsAuthorHovered(false);
             }}
             onMouseLeave={() => {
               setIsPhonemesHovered(false);
-              setIsAuthorClicked(false);
-              setIsAuthorHovered(false);
             }}
-            onToggle={() => {
-              setIsPhonemesClicked(!isPhonemesClicked);
-              setIsAuthorClicked(false);
-              setIsAuthorHovered(false);
-            }}
-            show={isPhonemesClicked || isPhonemesHovered}
+            show={isPhonemesHovered}
           >
             <Dropdown.Toggle
               href="#phonemes"
-              onClick={() => setPage("phonemes")}
+              onClick={() => {
+                setPage("phonemes");
+                setIsPhonemesHovered(false);
+              }}
               variant="secondary"
               id="dropdown-phonemes"
             >
@@ -393,31 +386,46 @@ const App = () => {
             <Dropdown.Menu>
               <Dropdown.Item
                 href="#short-vowels"
-                onClick={() => setPage("short-vowels")}
+                onClick={() => {
+                  setPage("short-vowels");
+                  setIsPhonemesHovered(false);
+                }}
               >
                 Short vowels
               </Dropdown.Item>
               <Dropdown.Item
                 href="#long-vowels"
-                onClick={() => setPage("long-vowels")}
+                onClick={() => {
+                  setPage("long-vowels");
+                  setIsPhonemesHovered(false);
+                }}
               >
                 Long vowels
               </Dropdown.Item>
               <Dropdown.Item
                 href="#r-colored-vowels"
-                onClick={() => setPage("r-colored-vowels")}
+                onClick={() => {
+                  setPage("r-colored-vowels");
+                  setIsPhonemesHovered(false);
+                }}
               >
                 R-colored vowels
               </Dropdown.Item>
               <Dropdown.Item
                 href="#diphthongs"
-                onClick={() => setPage("diphthongs")}
+                onClick={() => {
+                  setPage("diphthongs");
+                  setIsPhonemesHovered(false);
+                }}
               >
                 Diphthongs
               </Dropdown.Item>
               <Dropdown.Item
                 href="#consonants"
-                onClick={() => setPage("consonants")}
+                onClick={() => {
+                  setPage("consonants");
+                  setIsPhonemesHovered(false);
+                }}
               >
                 Consonants
               </Dropdown.Item>

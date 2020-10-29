@@ -168,6 +168,14 @@ tr:nth-child(even) {
   border: unset !important;
 }
 
+.dropdown-item:active {
+  background-color: #dc9b00 !important;
+}
+
+.dropdown-toggle:focus {
+  box-shadow: unset !important;
+}
+
 .dropdown-toggle:hover {
   box-shadow: 0 -0.75em 0 #ffebcd inset;
 }
