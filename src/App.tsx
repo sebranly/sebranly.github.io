@@ -20,9 +20,7 @@ import {
 } from "./phonemes";
 
 const App = () => {
-  const [isAuthorClicked, setIsAuthorClicked] = React.useState(false);
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
-  const [isPhonemesClicked, setIsPhonemesClicked] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
   const [emailBody, setEmailBody] = React.useState("");
   const [emailSubject, setEmailSubject] = React.useState("");

@@ -153,8 +153,20 @@ th {
   padding: 8px;
 }
 
+th {
+  background-color: #dc9b00;
+}
+
+tr:hover {
+  background-color: #dc9b00;
+}
+
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #ffebcd;
+}
+
+tr:nth-child(even):hover {
+  background-color: #dc9b00;
 }
 
 .dropdown-toggle {
@@ -245,7 +257,7 @@ tr:nth-child(even) {
 }
 
 .form {
-  width: 500px;
+  width: 50%;
   text-align: left;
 }
 
