@@ -16,6 +16,7 @@ import {
   longVowels,
   shortVowels,
   diphthongs,
+  consonants,
 } from "./phonemes";
 
 const App = () => {
@@ -234,6 +235,7 @@ const App = () => {
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">Consonants: blocked sounds</h3>
+            {renderTable(consonants)}
           </div>
         </div>
       );
@@ -315,7 +317,6 @@ const App = () => {
       <Helmet>
         <title>Faith Pellas</title>
         <link rel="canonical" href="https://sebranly.github.io/" />
-        <style>{"body { background-color: #FDDACD; }"}</style>
       </Helmet>
       <div className="main">
         <h1 className="h1-title">Faith Pellas</h1>
