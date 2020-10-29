@@ -168,6 +168,10 @@ tr:nth-child(even) {
   border: unset !important;
 }
 
+.dropdown-toggle:hover {
+  box-shadow: 0 -0.75em 0 #ffebcd inset;
+}
+
 #dropdown-phonemes {
   margin-left: 5px;
 }
@@ -200,6 +204,10 @@ tr:nth-child(even) {
   margin-left: 5px;
   margin-right: 5px;
   font-size: 32px;
+}
+
+.nav-link:hover {
+  box-shadow: 0 -0.75em 0 #ffebcd inset;
 }
 
 .navbar {
