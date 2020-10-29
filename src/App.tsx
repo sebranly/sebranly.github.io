@@ -65,11 +65,39 @@ const App = () => {
     );
   };
 
+  const renderBlockSounds = (blocks: any) => {
+    const audio = new Audio(
+      "https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+    );
+
+    return (
+      <>
+        <h4>Click for sound</h4>
+        <div className="container">
+          {blocks.map((block: any) => {
+            return (
+              <div
+                className="element"
+                onClick={() => {
+                  audio.play();
+                }}
+              >
+                {block}
+              </div>
+            );
+          })}
+        </div>
+      </>
+    );
+  };
+
   const renderShortVowels = () => {
     return (
       <div className="block-2">
         <div className="article">
           <h3 className="h3-title">6 Short Vowels /æ, ɛ, ɪ, ɑ, ʌ, ʊ/</h3>
+          <br />
+          {renderBlockSounds(["æ", "ɛ", "ɪ", "ɑ", "ʌ", "ʊ"])}
           {renderTable(shortVowels)}
         </div>
       </div>
