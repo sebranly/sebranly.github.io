@@ -11,7 +11,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
 import { quiz } from "./quiz";
 import Quiz from "react-quiz-component";
-import { GiMagnifyingGlass } from "react-icons/gi";
 import {
   rColoredVowels,
   longVowels,
@@ -316,6 +315,7 @@ const App = () => {
       <Helmet>
         <title>Faith Pellas</title>
         <link rel="canonical" href="https://sebranly.github.io/" />
+        <style>{"body { background-color: #FDDACD; }"}</style>
       </Helmet>
       <div className="main">
         <h1 className="h1-title">Faith Pellas</h1>
@@ -437,7 +437,6 @@ const App = () => {
             </Nav.Link>
           </Nav>
           <Form inline>
-            <GiMagnifyingGlass className="mag" />
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           </Form>
         </Navbar>

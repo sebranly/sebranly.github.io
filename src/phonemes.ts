@@ -81,3 +81,8 @@ export const diphthongs = [
   ],
   ["/aʊ/", "", "c<u>ow</u>, n<u>ow</u>, <u>ou</u>ch, w<u>ow</u>, <u>gow</u>n"],
 ];
+
+export const consonants = [
+  ["/p/", "p, pp", "pen, upper, puppy, grape, happy"],
+  ["/b/", "b, bb", "big, hobby, bee, library, cab"],
+];
