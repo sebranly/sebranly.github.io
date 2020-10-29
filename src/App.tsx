@@ -332,6 +332,10 @@ const App = () => {
           >
             <Dropdown.Toggle
               href="#about-author"
+              onClick={() => {
+                setPage("about-author");
+                setIsAuthorHovered(false);
+              }}
               variant="secondary"
               id="dropdown-about"
             >
