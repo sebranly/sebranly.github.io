@@ -1,45 +1,45 @@
 export const longVowels = [
   [
     "/ā/",
-    "-a, a-e, ai, ay, eigh, ey-",
+    "a, a-e, ai, ay, eigh, ey",
     "<u>a</u>corn, t<u>a</u>ke, p<u>ai</u>d, n<u>eigh</u>, h<u>e</u>y",
   ],
-  ["/ē/", "-e, ee, ea, ey, ie, y-", "beat, sheep, tea, key, funny"],
-  ["/ī/", "-i, i-e, igh, y, ie-", "ice, hike, fight, sky, pie"],
-  ["/ō/", "-o, o-e, oa, ou, ow-", "go, note, boat, though, low"],
-  ["/ū/", "-u, ew", "use, cube, few, threw,  yo<u>u</u>"],
-  ["/ōō/", "-oo, ou, u,", "who, noon, you, group, use"],
+  ["/ē/", "e, ee, ea, ey, ie, y", "beat, sheep, tea, key, funny"],
+  ["/ī/", "i, i-e, igh, y, ie", "ice, hike, fight, sky, pie"],
+  ["/ō/", "o, o-e, oa, ou, ow", "go, note, boat, though, low"],
+  ["/ū/", "u, ew", "use, cube, few, threw,  yo<u>u</u>"],
+  ["/ōō/", "oo, ou, u", "who, noon, you, group, use"],
 ];
 
 export const shortVowels = [
   [
     "/a/",
-    "-a, au, ai-",
+    "a, au, ai",
     "<u>a</u>pple, b<u>a</u>ck, pl<u>ai</u>d, l<u>au</u>gh, <u>a</u>fter",
   ],
   [
     "/e/",
-    "-e, ea, ai-",
+    "e, ea, ai",
     "m<u>e</u>n, br<u>ea</u>d, m<u>e</u>t, s<u>ai</u>d, h<u>ea</u>d",
   ],
   [
     "/i/",
-    "-i, y, ui, u-",
+    "i, y, ui, u",
     "<u>i</u>f, s<u>y</u>mbol, b<u>ui</u>ld, b<u>u</u>sy, q<u>ui</u>lt",
   ],
   [
     "/o/",
-    "-o, a, ow,",
+    "o, a, ow",
     "f<u>a</u>ther, c<u>a</u>r, kn<u>ow</u>ledge, g<u>o</u>d, b<u>o</u>dy",
   ],
   [
     "/u/",
-    "-u, o, oo, oe-",
+    "u, o, oo, oe",
     "<u>u</u>nder, h<u>o</u>ney, fl<u>oo</u>d, d<u>oe</u>s, f<u>u</u>n",
   ],
   [
     "/oo/",
-    "-oo, ou, u-",
+    "oo, ou, u",
     "f<u>ul</u>l, b<u>oo</u>k, c<u>ou</u>ld, sh<u>ou</u>ld, p<u>u</u>sh",
   ],
 ];
