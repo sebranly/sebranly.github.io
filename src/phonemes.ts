@@ -156,6 +156,15 @@ export const consonants = [
   [
     "/ʃ/",
     "sh, ti, ss, ch, tion, sion",
-    "<u>sh</u>are, mo<u>tion</u>, pa<u>ssion</u>, ten<u>sion</u>, English",
+    "<u>sh</u>are, mo<u>tion</u>, pa<u>ssion</u>, ten<u>sion</u>, Engli<u>sh</u>",
   ],
+  ["/ʒ/", "s, ge, sion, sure", "Asia, casual, beige, vision, measure"],
+  ["/m/", "m, mm, mb, me, mn", "mom, grammar, climb, game, autumn"],
+  ["/n/", "n, ne, nn, kn, pn, gn", "nine, connect, knife, pneumonia, gnaw"],
+  ["/ŋ/", "ng, n", "sing, bank, angry, drink, jungle"],
+  ["/j/", "y, io, u", "young, onion, opinion, yes, use"],
+  ["/l/", "l, ll, le", "long, pill, table, likely, lamp"],
+  ["/r/", "r, rr, wr, rh", "rest, borrow, rhythm, write, wrap"],
+  ["/w/", "w, wh, u, o", "west, when, quiet, one, whale"],
+  ["/h/", "h, wh", "home, whole, who, hair, ahead"],
 ];

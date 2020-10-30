@@ -391,7 +391,7 @@ const App = () => {
       </Helmet>
       <div className="main">
         <h1 className="h1-title">Faith Pellas</h1>
-        <h2 className="h2-title">Pronunciation</h2>
+        <h2 className="h2-title">English Pronunciation</h2>
         <Navbar className="navbar" expand="lg">
           <Dropdown
             onMouseEnter={() => {
