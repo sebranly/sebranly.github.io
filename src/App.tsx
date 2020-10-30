@@ -1,4 +1,5 @@
 import * as React from "react";
+import { IoIosConstruct } from "react-icons/io";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -20,6 +21,7 @@ import {
 } from "./phonemes";
 import { mapping } from "./search";
 import uniqBy from "lodash/uniqBy";
+import { isMobile } from "react-device-detect";
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
@@ -441,6 +443,28 @@ const App = () => {
       </div>
     );
   };
+
+  if (isMobile) {
+    return (
+      <HelmetProvider>
+        <Helmet>
+          <title>Faith Pellas</title>
+          <link rel="canonical" href="https://sebranly.github.io/" />
+        </Helmet>
+        <div className="mobile">
+          <h1>Faith Pellas</h1>
+          <h2>English Pronunciation</h2>
+          <div>
+            We are working hard to make this website accessible on mobile. In
+            the meantime, please visit it on a computer instead. Thank you for
+            your understanding!
+          </div>
+        </div>
+        <br />
+        <IoIosConstruct className="icon-mobile" size="100px" />
+      </HelmetProvider>
+    );
+  }
 
   return (
     <HelmetProvider>
