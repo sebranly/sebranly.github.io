@@ -1,4 +1,61 @@
+const oddOneOut = "Choose the word that does not have the same phoneme.";
+
+const commonQuestionProps = {
+  question: oddOneOut,
+  questionType: "text",
+  answerSelectionType: "single",
+  point: "20",
+};
+
 export const quiz = {
+  quizTitle: "Odd One Out",
+  quizSynopsis:
+    "Please do not refresh the page. Please do not change the page until you complete the quiz.",
+  questions: [
+    {
+      ...commonQuestionProps,
+      answers: ["bread", "seed", "read", "green"],
+      correctAnswer: "1",
+      messageForCorrectAnswer: "Correct answer. Good job.",
+      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      explanation: "TODO",
+    },
+    {
+      ...commonQuestionProps,
+      answers: ["pace", "neighs", "gray", "key"],
+      correctAnswer: "4",
+      messageForCorrectAnswer: "Correct answer. Good job.",
+      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      explanation: "TODO",
+    },
+    {
+      ...commonQuestionProps,
+      answers: ["sew", "through", "brew", "blue"],
+      correctAnswer: "1",
+      messageForCorrectAnswer: "Correct answer. Good job.",
+      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      explanation: "TODO",
+    },
+    {
+      ...commonQuestionProps,
+      answers: ["eight", "ant", "aim", "age"],
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Correct answer. Good job.",
+      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      explanation: "TODO",
+    },
+    {
+      ...commonQuestionProps,
+      answers: ["thick", "then", "third", "through"],
+      correctAnswer: "2",
+      messageForCorrectAnswer: "Correct answer. Good job.",
+      messageForIncorrectAnswer: "Incorrect answer. Please try again.",
+      explanation: "TODO",
+    },
+  ],
+};
+
+export const quizDemo = {
   quizTitle: "React Quiz Component Demo",
   quizSynopsis:
     "Please do not refresh the page. Please do not change the page until you complete the quiz.",

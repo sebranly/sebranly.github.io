@@ -9,7 +9,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from "react-bootstrap/Dropdown";
 import Badge from "react-bootstrap/Badge";
-import { quiz } from "./quiz";
+import { quiz, quizDemo } from "./quiz";
 import Quiz from "react-quiz-component";
 import {
   rColoredVowels,
@@ -342,7 +342,8 @@ const App = () => {
         <div className="block-2">
           <div className="article">
             <h3 className="h3-title">Quiz</h3>
-            <Quiz quiz={quiz} />
+            <Quiz quiz={quiz} showInstantFeedback={true} />
+            <Quiz quiz={quizDemo} />
           </div>
         </div>
       );
