@@ -18,12 +18,15 @@ import {
   diphthongs,
   consonants,
 } from "./phonemes";
+import { mapping } from "./search";
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
   const [isPhonemesHovered, setIsPhonemesHovered] = React.useState(false);
   const [emailBody, setEmailBody] = React.useState("");
   const [emailSubject, setEmailSubject] = React.useState("");
+  const [search, setSearch] = React.useState("");
+  const [matches, setMatches] = React.useState<any>([]);
 
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
@@ -332,6 +335,29 @@ const App = () => {
     );
   };
 
+  const renderMatches = () => {
+    if (matches.length === 0) return null;
+    const matchesLinks = matches.map((m: any) => (
+      <a
+        className="match"
+        href={`#${m[1]}`}
+        onClick={() => {
+          setPage(m[1]);
+          setSearch("");
+          setMatches([]);
+        }}
+      >
+        {m[2]}
+      </a>
+    ));
+
+    return (
+      <div className="results">
+        Results: <div>{matchesLinks}</div>
+      </div>
+    );
+  };
+
   return (
     <HelmetProvider>
       <link
@@ -476,9 +502,33 @@ const App = () => {
             </Nav.Link>
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <FormControl
+              onChange={(e) => {
+                setSearch(e.target.value);
+
+                const newMatches = mapping.filter((m: any) => {
+                  const key = m[0];
+
+                  return key.some((k: any) => e.target.value.includes(k));
+                });
+
+                const sortedNewMatches = newMatches.sort(function (a, b) {
+                  return b[0].length - a[1].length;
+                });
+
+                setMatches(sortedNewMatches);
+              }}
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2"
+              value={search}
+            />
           </Form>
         </Navbar>
+        {renderMatches()}
+        {matches.length === 0 && search.length > 0 && (
+          <div className="results">No results yet...</div>
+        )}
 
         <div className="body">{renderBody()}</div>
         {/* <div className="footer">Created in 2020</div> */}
