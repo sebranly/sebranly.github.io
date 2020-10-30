@@ -293,7 +293,18 @@ h4 {
   text-align: center;
 }
 
+.resultsWrapper {
+  position: relative;
+}
+
 .results {
+  border: 1px solid #dc9b00;
+  background-color: #fef9dd;
+  position: absolute;
+  border-radius: 5px;
+  padding: 5px;
+  right: 0px;
+  min-width: 300px;
   text-align: right;
   font-size: 20px;
 }

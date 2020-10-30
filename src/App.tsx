@@ -337,7 +337,16 @@ const App = () => {
   };
 
   const renderMatches = () => {
+    if (matches.length === 0 && search.length > 0) {
+      return (
+        <div className="resultsWrapper">
+          <div className="results">No results yet...</div>
+        </div>
+      );
+    }
+
     if (matches.length === 0) return null;
+
     const matchesLinks = matches.map((m: any) => (
       <div>
         <a
@@ -356,8 +365,10 @@ const App = () => {
     ));
 
     return (
-      <div className="results">
-        Results: <div>{matchesLinks}</div>
+      <div className="resultsWrapper">
+        <div className="results">
+          Results: <div>{matchesLinks}</div>
+        </div>
       </div>
     );
   };
@@ -509,6 +520,7 @@ const App = () => {
             <FormControl
               onChange={(e) => {
                 const input = e.target.value;
+                const inputLowercase = input.toLowerCase();
                 setSearch(input);
 
                 const newMatches: any[] = [];
@@ -517,9 +529,8 @@ const App = () => {
                   const key = m[0];
 
                   if (input.length >= 3) {
-                    const firstLetters = input.substring(0, 3);
                     const matchKey = key.find((k: any) =>
-                      k.includes(firstLetters)
+                      k.includes(inputLowercase)
                     );
 
                     if (matchKey) {
@@ -542,12 +553,11 @@ const App = () => {
             />
           </Form>
         </Navbar>
-        {renderMatches()}
-        {matches.length === 0 && search.length > 0 && (
-          <div className="results">No results yet...</div>
-        )}
 
-        <div className="body">{renderBody()}</div>
+        <div className="body">
+          {renderMatches()}
+          {renderBody()}
+        </div>
         {/* <div className="footer">Created in 2020</div> */}
       </div>
     </HelmetProvider>
