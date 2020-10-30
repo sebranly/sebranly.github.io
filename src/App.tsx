@@ -129,9 +129,32 @@ const App = () => {
     return (
       <div className="block-2">
         <div className="article">
-          <h3 className="h3-title">5 NAE Diphthongs /aɪ, aʊ, eɪ, oʊ, ɔɪ/</h3>
-          <h4>(8 in BrE)</h4>
+          <h3 className="h3-title">Diphthongs</h3>
+          <div>
+            Diphthongs are a combination of two vowel sounds. There are eight
+            diphthongs in the IPA: aɪ, eɪ, ɔɪ, aʊ, ɪə, ʊə, əʊ, eə. All eight
+            phonemes can be found in RP, while only five sounds are produced in
+            American English.
+          </div>
           {renderTable(diphthongs, false)}
+        </div>
+      </div>
+    );
+  };
+
+  const renderMain = () => {
+    return (
+      <div className="block-2">
+        <div className="article">
+          <h3 className="h3-title">
+            Learn how to speak English the American way
+          </h3>
+          <ul>
+            <li>Practice sounds</li>
+            <li>Practice intonation</li>
+            <li>Practice stress</li>
+            <li>TODO: links</li>
+          </ul>
         </div>
       </div>
     );
@@ -208,14 +231,18 @@ const App = () => {
       );
     }
 
+    if (page === "main") {
+      return renderMain();
+    }
+
     if (page === "phonemes") {
       return (
         <div className="block-2">
           <div className="article">
-            <h3 className="h3-title">26 Letters, 44 Phonemes</h3>
             <div>
-              There are 26 letters in the English alphabet. These letters are
-              divided into two categories:{" "}
+              According to the International Phonetic Alphabet (IPA), there are
+              26 letters and 44 phonemes (or sounds) in the English alphabet.
+              These letters are divided into two categories:{" "}
               <a
                 className="clickable-page"
                 href="#vowels"
@@ -232,6 +259,16 @@ const App = () => {
                 consonants
               </a>
               .
+            </div>
+            <br />
+            <div>
+              Notes: Phonemes should not rely on the word’s spelling. For
+              example, the word m
+              <i>
+                <b>oo</b>
+              </i>
+              n is not spelled with the letter ‘u’, yet is produced with the
+              long /u/ phoneme.{" "}
             </div>
           </div>
         </div>
@@ -256,13 +293,34 @@ const App = () => {
 
     if (page === "vowels") {
       return (
-        <>
-          <h2 className="h3-title vowels-title">Vowels: unblocked sounds</h2>
-          <br />
-          {renderShortVowels()}
+        <div className="block-2">
+          <div className="article">
+            <h2 className="h3-title vowels-title">Vowels</h2>
+            <br />
+            <div>
+              Vowels are a set of unblocked sounds that are essential to
+              producing a syllable. They consist of the letters A, E, I, O, U
+              (sometimes Y). The IPA lists 20 phonemes categorized as long,
+              short, and diphthongs.
+            </div>
+            <br />
+            <div>
+              Vowels can sometimes be categorized as lax (short) and tense
+              (long) depending on the muscular effort the lips and tongue make
+              during phoneme production.
+            </div>
+            <br />
+            <div>
+              Listed below are the phonemes that are widely used in the American
+              English language. Some words might vary in phonemes depending on
+              regional dialects.
+            </div>
+
+            {/* {renderShortVowels()}
           {renderLongVowels()}
-          {renderRColoredVowels()}
-        </>
+          {renderRColoredVowels()} */}
+          </div>
+        </div>
       );
     }
 
@@ -270,7 +328,13 @@ const App = () => {
       return (
         <div className="block-2">
           <div className="article">
-            <h3 className="h3-title">Consonants: blocked sounds</h3>
+            <h3 className="h3-title">Consonants</h3>
+            <div>
+              Consonants have 24 blocked sounds. In the IPA, consonants are
+              arranged completely differently from the English alphabet. Each
+              phoneme is organized based on the sound’s place of articulation
+              and alternates between voiced and unvoiced
+            </div>
             {renderTable(consonants)}
           </div>
         </div>

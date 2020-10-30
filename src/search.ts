@@ -77,4 +77,9 @@ export const mapping = [
   [["intonation"], "intonation", "Intonation"],
   [["resource", "resources"], "resources", "Resources"],
   [["quiz", "quizzes"], "quiz", "Quiz"],
+  [
+    ["english", "pronunciation", "english pronunciation", "main"],
+    "main",
+    "Main Page",
+  ],
 ];
