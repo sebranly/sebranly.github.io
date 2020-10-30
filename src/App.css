@@ -298,8 +298,16 @@ h4 {
   font-size: 20px;
 }
 
-.match {
-  display: block;
+.result {
+  text-decoration: unset;
+  color: #dc9b00;
+  display: inline-block;
+}
+
+.result:hover {
+  cursor: pointer;
+  color: #dc9b00;
+  text-decoration: underline;
 }
 
 body {

@@ -19,6 +19,7 @@ import {
   consonants,
 } from "./phonemes";
 import { mapping } from "./search";
+import uniqBy from "lodash/uniqBy";
 
 const App = () => {
   const [isAuthorHovered, setIsAuthorHovered] = React.useState(false);
@@ -338,17 +339,20 @@ const App = () => {
   const renderMatches = () => {
     if (matches.length === 0) return null;
     const matchesLinks = matches.map((m: any) => (
-      <a
-        className="match"
-        href={`#${m[1]}`}
-        onClick={() => {
-          setPage(m[1]);
-          setSearch("");
-          setMatches([]);
-        }}
-      >
-        {m[2]}
-      </a>
+      <div>
+        <a
+          className="result"
+          href={`#${m[1]}`}
+          onClick={() => {
+            setPage(m[1]);
+            setSearch("");
+            setMatches([]);
+          }}
+        >
+          {m[2]}
+        </a>{" "}
+        {`("${m[0]}")`}
+      </div>
     ));
 
     return (
@@ -504,19 +508,32 @@ const App = () => {
           <Form inline>
             <FormControl
               onChange={(e) => {
-                setSearch(e.target.value);
+                const input = e.target.value;
+                setSearch(input);
 
-                const newMatches = mapping.filter((m: any) => {
+                const newMatches: any[] = [];
+
+                mapping.forEach((m: any) => {
                   const key = m[0];
 
-                  return key.some((k: any) => e.target.value.includes(k));
+                  if (input.length >= 3) {
+                    const firstLetters = input.substring(0, 3);
+                    const matchKey = key.find((k: any) =>
+                      k.includes(firstLetters)
+                    );
+
+                    if (matchKey) {
+                      newMatches.push([matchKey, m[1], m[2]]);
+                    }
+                  }
                 });
 
                 const sortedNewMatches = newMatches.sort(function (a, b) {
-                  return b[0].length - a[1].length;
+                  return a[0].length - b[0].length;
                 });
 
-                setMatches(sortedNewMatches);
+                const uniqNewMatches = uniqBy(sortedNewMatches, (m) => m[2]);
+                setMatches(uniqNewMatches);
               }}
               type="text"
               placeholder="Search"

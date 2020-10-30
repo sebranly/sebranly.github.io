@@ -17,8 +17,6 @@ const shortVowelsKeys = flatten(
   })
 );
 
-console.log("shortVowelsKeys -> shortVowelsKeys", shortVowelsKeys);
-
 export const mapping = [
   [["about", "author", "faith"], "about-author", "About the Author"],
   [["consonant"], "consonants", "Consonants"],
