@@ -518,6 +518,21 @@ const App = () => {
           </Nav>
           <Form inline>
             <FormControl
+              onKeyPress={(e: any) => {
+                if (e.keyCode === 13 || e.which === 13) {
+                  e.preventDefault();
+
+                  if (matches.length > 0) {
+                    const match = matches[0];
+                    const key = match[1];
+
+                    setPage(key);
+                    setSearch("");
+                    setMatches([]);
+                    window.location.href = `#${key}`;
+                  }
+                }
+              }}
               onChange={(e) => {
                 const input = e.target.value;
                 const inputLowercase = input.toLowerCase();
