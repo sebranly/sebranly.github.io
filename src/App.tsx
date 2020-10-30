@@ -231,10 +231,6 @@ const App = () => {
       );
     }
 
-    if (page === "main") {
-      return renderMain();
-    }
-
     if (page === "phonemes") {
       return (
         <div className="block-2">
@@ -369,41 +365,45 @@ const App = () => {
       </div>
     );
 
-    return (
-      <>
-        <div className="block-2">
-          <div className="article">
-            <h3 className="h3-title">
-              Something <Badge variant="secondary">New</Badge>
-            </h3>
-            <p>One paragraph</p>
-            <p>Another one</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+    if (["stress", "intonation", "resources"].includes(page)) {
+      return (
+        <>
+          <div className="block-2">
+            <div className="article">
+              <h3 className="h3-title">
+                Something <Badge variant="secondary">New</Badge>
+              </h3>
+              <p>One paragraph</p>
+              <p>Another one</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            {renderFake()}
+            {renderFake()}
           </div>
-          {renderFake()}
-          {renderFake()}
-        </div>
-        <div className="block-1">
-          <div className="section">
-            <h3 className="h3-title">Some section</h3>
-            <p>Short description</p>
-            <p>One paragraph</p>
+          <div className="block-1">
+            <div className="section">
+              <h3 className="h3-title">Some section</h3>
+              <p>Short description</p>
+              <p>One paragraph</p>
+            </div>
+            <div className="section">
+              <h3 className="h3-title">Some other section</h3>
+              <p>Very short description</p>
+            </div>
           </div>
-          <div className="section">
-            <h3 className="h3-title">Some other section</h3>
-            <p>Very short description</p>
-          </div>
-        </div>
-      </>
-    );
+        </>
+      );
+    }
+
+    return renderMain();
   };
 
   const renderMatches = () => {
