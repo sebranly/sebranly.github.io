@@ -32,9 +32,15 @@ const App = () => {
   const hash = window?.location?.hash?.substr(1);
   const [page, setPage] = React.useState(hash);
 
+  const setPageAndClear = (hash: string) => {
+    setSearch("");
+    setMatches([]);
+    setPage(hash);
+  };
+
   window.onhashchange = function () {
     const hash = window?.location?.hash?.substr(1);
-    setPage(hash);
+    setPageAndClear(hash);
   };
 
   const renderTable = (data: any, renderGrapheme = true) => {
@@ -213,7 +219,7 @@ const App = () => {
               <a
                 className="clickable-page"
                 href="#vowels"
-                onClick={() => setPage("vowels")}
+                onClick={() => setPageAndClear("vowels")}
               >
                 vowels
               </a>{" "}
@@ -221,7 +227,7 @@ const App = () => {
               <a
                 className="clickable-page"
                 href="#consonants"
-                onClick={() => setPage("consonants")}
+                onClick={() => setPageAndClear("consonants")}
               >
                 consonants
               </a>
@@ -353,9 +359,7 @@ const App = () => {
           className="result"
           href={`#${m[1]}`}
           onClick={() => {
-            setPage(m[1]);
-            setSearch("");
-            setMatches([]);
+            setPageAndClear(m[1]);
           }}
         >
           {m[2]}
@@ -402,7 +406,7 @@ const App = () => {
             <Dropdown.Toggle
               href="#about-author"
               onClick={() => {
-                setPage("about-author");
+                setPageAndClear("about-author");
                 setIsAuthorHovered(false);
               }}
               variant="secondary"
@@ -415,7 +419,7 @@ const App = () => {
               <Dropdown.Item
                 href="#about-author"
                 onClick={() => {
-                  setPage("about-author");
+                  setPageAndClear("about-author");
                   setIsAuthorHovered(false);
                 }}
               >
@@ -423,7 +427,7 @@ const App = () => {
               </Dropdown.Item>
               <Dropdown.Item
                 onClick={() => {
-                  setPage("letter-teachers");
+                  setPageAndClear("letter-teachers");
                   setIsAuthorHovered(false);
                 }}
                 href="#letter-teachers"
@@ -445,7 +449,7 @@ const App = () => {
             <Dropdown.Toggle
               href="#phonemes"
               onClick={() => {
-                setPage("phonemes");
+                setPageAndClear("phonemes");
                 setIsPhonemesHovered(false);
               }}
               variant="secondary"
@@ -458,7 +462,7 @@ const App = () => {
               <Dropdown.Item
                 href="#short-vowels"
                 onClick={() => {
-                  setPage("short-vowels");
+                  setPageAndClear("short-vowels");
                   setIsPhonemesHovered(false);
                 }}
               >
@@ -467,7 +471,7 @@ const App = () => {
               <Dropdown.Item
                 href="#long-vowels"
                 onClick={() => {
-                  setPage("long-vowels");
+                  setPageAndClear("long-vowels");
                   setIsPhonemesHovered(false);
                 }}
               >
@@ -476,7 +480,7 @@ const App = () => {
               <Dropdown.Item
                 href="#r-colored-vowels"
                 onClick={() => {
-                  setPage("r-colored-vowels");
+                  setPageAndClear("r-colored-vowels");
                   setIsPhonemesHovered(false);
                 }}
               >
@@ -485,7 +489,7 @@ const App = () => {
               <Dropdown.Item
                 href="#diphthongs"
                 onClick={() => {
-                  setPage("diphthongs");
+                  setPageAndClear("diphthongs");
                   setIsPhonemesHovered(false);
                 }}
               >
@@ -494,7 +498,7 @@ const App = () => {
               <Dropdown.Item
                 href="#consonants"
                 onClick={() => {
-                  setPage("consonants");
+                  setPageAndClear("consonants");
                   setIsPhonemesHovered(false);
                 }}
               >
@@ -503,16 +507,22 @@ const App = () => {
             </Dropdown.Menu>
           </Dropdown>
           <Nav className="mr-auto">
-            <Nav.Link href="#stress" onClick={() => setPage("stress")}>
+            <Nav.Link href="#stress" onClick={() => setPageAndClear("stress")}>
               Stress
             </Nav.Link>
-            <Nav.Link href="#intonation" onClick={() => setPage("intonation")}>
+            <Nav.Link
+              href="#intonation"
+              onClick={() => setPageAndClear("intonation")}
+            >
               Intonation
             </Nav.Link>
-            <Nav.Link href="#resources" onClick={() => setPage("resources")}>
+            <Nav.Link
+              href="#resources"
+              onClick={() => setPageAndClear("resources")}
+            >
               Resources
             </Nav.Link>
-            <Nav.Link href="#quiz" onClick={() => setPage("quiz")}>
+            <Nav.Link href="#quiz" onClick={() => setPageAndClear("quiz")}>
               Quiz
             </Nav.Link>
           </Nav>
@@ -526,9 +536,7 @@ const App = () => {
                     const match = matches[0];
                     const key = match[1];
 
-                    setPage(key);
-                    setSearch("");
-                    setMatches([]);
+                    setPageAndClear(key);
                     window.location.href = `#${key}`;
                   }
                 }
