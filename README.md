@@ -1,1 +1,1 @@
-Moved to https://sebranly.github.io/sebranly-resume
+Moved to <a>https://sebranly.github.io/sebranly-resume</a>
