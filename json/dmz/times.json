@@ -1,0 +1,32 @@
+{
+  "times": [
+    {
+      "type": "challenges",
+      "name": "Daily Challenges",
+      "frequency": "daily",
+      "status": "reset",
+      "time": 1678078800
+    },
+    {
+      "type": "season",
+      "name": "Season 03",
+      "frequency": "none",
+      "status": "launch",
+      "time": 123
+    },
+    {
+      "type": "map",
+      "name": "Building 21",
+      "frequency": "weekly",
+      "status": "opening",
+      "time": 1678471200
+    },
+    {
+      "type": "map",
+      "name": "Building 21",
+      "frequency": "weekly",
+      "status": "closing",
+      "time": 1678125600
+    }
+  ]
+}
