@@ -19,14 +19,14 @@
       "name": "Building 21",
       "frequency": "weekly",
       "status": "opening",
-      "time": 1678471200
+      "time": 1678467600
     },
     {
       "type": "map",
       "name": "Building 21",
       "frequency": "weekly",
       "status": "closing",
-      "time": 1678125600
+      "time": 1678122000
     }
   ]
 }
