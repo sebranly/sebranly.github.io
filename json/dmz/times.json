@@ -15,6 +15,13 @@
       "time": 1678467600
     },
     {
+      "type": "season",
+      "name": "Season 05",
+      "frequency": "none",
+      "status": "launch",
+      "time": 1691568000
+    },
+    {
       "type": "map",
       "name": "Building 21",
       "frequency": "weekly",
