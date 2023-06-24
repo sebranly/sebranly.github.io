@@ -1,0 +1,56 @@
+{
+  "v2": [
+    {
+      "type": "reset",
+      "title": "Daily Challenges",
+      "subtitle": "They reset in",
+      "frequency": "daily",
+      "data": [
+        {
+          "color": "yellow",
+          "description": "Daily Reset:",
+          "time": 1678078800
+        }
+      ]
+    },
+    {
+      "type": "status",
+      "title": "Building 21",
+      "frequency": "weekly",
+      "data": [
+        {
+          "color": "green",
+          "time": 1678467600,
+          "description": "Weekly Opening:",
+          "textOverride": {
+            "title": "Building 21 is closed",
+            "subtitle": "It opens in"
+          }
+        },
+        {
+          "color": "orange",
+          "time": 1678122000,
+          "description": "Weekly Closing:",
+          "textOverride": {
+            "title": "Building 21 is open",
+            "subtitle": "It closes in"
+          }
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "title": "Season 05",
+      "showPostEvent": true,
+      "subtitle": "It launches in",
+      "subtitlePostEvent": "It launched already",
+      "data": [
+        {
+          "color": "red",
+          "description": "Release Date:",
+          "time": 1690963200
+        }
+      ]
+    }
+  ]
+}
