@@ -22,6 +22,20 @@
       "time": 1690963200
     },
     {
+      "type": "season",
+      "name": "Season 05 Reloaded",
+      "frequency": "none",
+      "status": "launch",
+      "time": 1693382400
+    },
+    {
+      "type": "season",
+      "name": "Season 06",
+      "frequency": "none",
+      "status": "launch",
+      "time": 1695801600
+    },
+    {
       "type": "map",
       "name": "Building 21",
       "frequency": "weekly",

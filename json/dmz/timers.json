@@ -51,6 +51,34 @@
           "time": 1690963200
         }
       ]
+    },
+    {
+      "type": "event",
+      "title": "Season 05 Reloaded",
+      "showPostEvent": true,
+      "subtitle": "It launches in",
+      "subtitlePostEvent": "It launched already",
+      "data": [
+        {
+          "color": "red",
+          "description": "Release Date:",
+          "time": 1693382400
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "title": "Season 06",
+      "showPostEvent": true,
+      "subtitle": "It launches in",
+      "subtitlePostEvent": "It launched already",
+      "data": [
+        {
+          "color": "red",
+          "description": "Release Date:",
+          "time": 1695801600
+        }
+      ]
     }
   ]
 }
